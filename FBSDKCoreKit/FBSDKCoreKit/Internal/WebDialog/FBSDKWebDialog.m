@@ -102,6 +102,10 @@ static FBSDKWebDialog *g_currentDialog = nil;
   return YES;
 }
 
+- (void)setHidden:(BOOL)hidden{
+  _dialogView.hidden = hidden;
+}
+
 #pragma mark - FBSDKWebDialogViewDelegate
 
 - (void)webDialogView:(FBSDKWebDialogView *)webDialogView didCompleteWithResults:(NSDictionary *)results
@@ -252,7 +256,7 @@ static FBSDKWebDialog *g_currentDialog = nil;
   _backgroundView = [[UIView alloc] initWithFrame:window.bounds];
   _backgroundView.alpha = 0.0;
   _backgroundView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-  _backgroundView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.8];
+  //_backgroundView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.8];
   [window addSubview:_backgroundView];
 
   [window addSubview:_dialogView];
