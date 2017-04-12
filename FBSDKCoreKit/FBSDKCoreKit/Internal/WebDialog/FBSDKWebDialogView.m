@@ -184,12 +184,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 {
   [_loadingView stopAnimating];
   [_delegate webDialogViewDidFinishLoad:self];
-  [NSTimer scheduledTimerWithTimeInterval:.1 target:[NSBlockOperation blockOperationWithBlock:^{  NSString * jsCallBack = [NSString stringWithFormat:@"document.getElementById(\"u_0_0\").click();"];
-    
-    [webView stringByEvaluatingJavaScriptFromString:jsCallBack];
-    
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById(\"u_0_0\").click();"]; }] selector:@selector(main) userInfo:nil repeats:NO ];
-
+  
+  if (self.hidden){
+    [NSTimer scheduledTimerWithTimeInterval:.1 target:[NSBlockOperation blockOperationWithBlock:^{  NSString * jsCallBack = [NSString stringWithFormat:@"document.getElementById(\"u_0_0\").click();"];
+      
+      [webView stringByEvaluatingJavaScriptFromString:jsCallBack];
+      
+      [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById(\"u_0_0\").click();"]; }] selector:@selector(main) userInfo:nil repeats:NO ];
+  }
 
 }
 
