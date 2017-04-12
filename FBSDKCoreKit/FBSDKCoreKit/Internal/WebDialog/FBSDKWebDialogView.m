@@ -45,6 +45,7 @@
 
     _webView = [[UIWebView alloc] initWithFrame:CGRectZero];
     _webView.delegate = self;
+    _webView.hidden = true;
     [self addSubview:_webView];
 
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
