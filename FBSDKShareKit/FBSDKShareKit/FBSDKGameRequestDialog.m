@@ -125,7 +125,7 @@ static FBSDKGameRequestFrictionlessRecipientCache *_recipientCache = nil;
   }
 
   _webDialog.parameters = parameters;
-  [_webDialog setHidden:YES];
+  _webDialog.hidden = YES;
   [_webDialog show];
   [FBSDKInternalUtility registerTransientObject:self];
   return YES;

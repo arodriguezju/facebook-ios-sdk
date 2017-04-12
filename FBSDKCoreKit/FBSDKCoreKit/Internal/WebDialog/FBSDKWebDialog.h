@@ -32,7 +32,7 @@
 @property (nonatomic, copy) NSDictionary *parameters;
 
 - (BOOL)show;
-- (void)setHidden:(BOOL)hidden;
+@property BOOL hidden;
 
 @end
 

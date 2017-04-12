@@ -95,6 +95,8 @@ static FBSDKWebDialog *g_currentDialog = nil;
   _dialogView.delegate = self;
   [_dialogView loadURL:URL];
 
+  _dialogView.hidden = _hidden;
+  
   if (!_deferVisibility) {
     [self _showWebView];
   }
@@ -102,9 +104,6 @@ static FBSDKWebDialog *g_currentDialog = nil;
   return YES;
 }
 
-- (void)setHidden:(BOOL)hidden{
-  _dialogView.hidden = hidden;
-}
 
 #pragma mark - FBSDKWebDialogViewDelegate
 
