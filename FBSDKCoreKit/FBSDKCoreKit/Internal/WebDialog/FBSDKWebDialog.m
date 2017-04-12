@@ -256,7 +256,9 @@ static FBSDKWebDialog *g_currentDialog = nil;
   _backgroundView = [[UIView alloc] initWithFrame:window.bounds];
   _backgroundView.alpha = 0.0;
   _backgroundView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-  //_backgroundView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.8];
+  _backgroundView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.8];
+  
+  if (!_dialogView.hidden)
   [window addSubview:_backgroundView];
 
   [window addSubview:_dialogView];
