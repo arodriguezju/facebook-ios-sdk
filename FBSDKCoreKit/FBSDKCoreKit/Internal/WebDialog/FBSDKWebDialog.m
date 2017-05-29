@@ -70,7 +70,7 @@ static FBSDKWebDialog *g_currentDialog = nil;
   if (g_currentDialog == self) {
     return NO;
   }
-  [g_currentDialog _dismissAnimated:YES];
+ // [g_currentDialog _dismissAnimated:YES];
 
   NSError *error;
   NSURL *URL = [self _generateURL:&error];
